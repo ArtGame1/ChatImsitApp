@@ -21,7 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Type your message..."
+        android:hint="Сообщение"
         android:background="@drawable/message_et_shape"
         android:padding="13dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -2,16 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/chats"
-        android:title="Chats"
+        android:title="Чаты"
         android:icon="@drawable/baseline_chat_24"/>
 
     <item
         android:id="@+id/new_chat"
-        android:title="New Chat"
+        android:title="Новый чат"
         android:icon="@drawable/baseline_find_replace_24"/>
 
     <item
         android:id="@+id/profile"
-        android:title="Profile"
+        android:title="Профиль"
         android:icon="@drawable/baseline_person_24"/>
+
+    <item
+        android:id="@+id/exit"
+        android:title="Выход"
+        android:icon="@drawable/ic_logout"/>
 </menu>

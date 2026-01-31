@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chatimsitapp.databinding.ActivityRegisterBinding;
@@ -13,6 +15,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
     private static final String TAG = "RegisterActivity";
+    private TextView login_click_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,19 +23,20 @@ public class RegisterActivity extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
         Log.d(TAG, "RegisterActivity started");
 
         // Обработчик кнопки "Login" - переходит в LoginActivity
         binding.loginClickTv.setOnClickListener(view -> {
-            Log.d(TAG, "Login text clicked");
-            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            finish();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         });
 
         // Обработчик кнопки "Back"
         binding.backBtn.setOnClickListener(view -> {
-            Log.d(TAG, "Back button clicked");
-            finish();
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
 
         // Обработчик кнопки "Sign Up"
@@ -87,7 +91,6 @@ public class RegisterActivity extends AppCompatActivity {
             // Очищаем стек активностей и запускаем MainActivity
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
-            finish(); // Закрываем RegisterActivity
         });
     }
 

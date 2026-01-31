@@ -35,7 +35,7 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="34dp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Sign up"
+        android:text="Регистрация"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -162,7 +162,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
         android:layout_marginTop="40dp"
-        android:text="Sign up"
+        android:text="Авторизоваться"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_lin" />
