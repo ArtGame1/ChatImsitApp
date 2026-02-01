@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "171736969474",
+    "project_id": "chatimsitapp",
+    "storage_bucket": "chatimsitapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171736969474:android:92954bfa79c97583fed21b",
+        "android_client_info": {
+          "package_name": "com.example.chatimsitapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvwMCl5-Yu-ZsfMLNnAou1-GQvJelS_YA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
