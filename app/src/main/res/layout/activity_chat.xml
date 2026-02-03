@@ -1,42 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/activity_chat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatActivity">
+    tools:context=".chats.ChatActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/message_rv"
+    <!-- Список сообщений -->
+    <ListView
+        android:id="@+id/listOfMessages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_above="@+id/bottomLayout"
+        android:layout_alignParentTop="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
 
-    <EditText
-        android:id="@+id/message_et"
-        android:layout_width="0dp"
+    <!-- Нижняя панель с кнопками -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Сообщение"
-        android:background="@drawable/message_et_shape"
-        android:padding="13dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/send_message_btn"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@android:color/white"
+        android:elevation="4dp">
 
-    <ImageButton
-        android:id="@+id/send_message_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_send_24"
-        android:backgroundTint="@android:color/transparent"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/message_et"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/message_et"/>
+        <!-- Поле ввода -->
+        <EditText
+            android:id="@+id/textField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Введите сообщение..."
+            android:textSize="16sp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:imeOptions="actionSend"
+            android:maxLines="3"
+            android:padding="12dp"
+            android:background="@drawable/message_et_shape"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Кнопка вложения -->
+        <ImageButton
+            android:id="@+id/attachBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_attach_file"
+            android:contentDescription="Прикрепить файл" />
+
+        <!-- Кнопка эмодзи -->
+        <ImageButton
+            android:id="@+id/emojiBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_smile"
+            android:contentDescription="Эмодзи" />
+
+        <!-- Кнопка отправки -->
+        <ImageButton
+            android:id="@+id/submitBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/baseline_send_24"
+            android:contentDescription="Отправить" />
+
+    </LinearLayout>
+
+</RelativeLayout>

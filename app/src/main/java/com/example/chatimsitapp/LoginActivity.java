@@ -86,17 +86,20 @@ public class LoginActivity extends AppCompatActivity {
 
         // Проверяем учетные данные
         if (checkCredentials(email, password)) {
-            // Успешный вход
-            Log.d(TAG, "Login successful for: " + email);
-            Toast.makeText(getApplicationContext(), "Авторизация успешна!", Toast.LENGTH_SHORT).show();
 
             // Сохраняем данные входа
             saveLoginData(email);
 
             // Переход в MainActivity
             goToMainActivity(email);
+
+            // Успешный вход
+            Log.d(TAG, "Login successful for: " + email);
+            Toast.makeText(getApplicationContext(), "Авторизация успешна!", Toast.LENGTH_SHORT).show();
+
         } else {
-            Toast.makeText(LoginActivity.this, "Неверный email или пароль", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
     }
 

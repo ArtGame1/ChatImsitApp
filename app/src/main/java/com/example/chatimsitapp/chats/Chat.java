@@ -1,4 +1,4 @@
-package com.example.chatimsitapp;
+package com.example.chatimsitapp.chats;
 
 public class Chat {
     private String id;

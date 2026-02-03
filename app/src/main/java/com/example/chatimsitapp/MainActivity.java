@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.chatimsitapp.chats.Chat;
+import com.example.chatimsitapp.chats.ChatActivity;
 import com.example.chatimsitapp.chats.ChatViewHolder;
 import com.example.chatimsitapp.databinding.ActivityMainBinding;
 
