@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.chatimsitapp.MainActivity;
 import com.example.chatimsitapp.R;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -37,7 +39,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private ListView listOfMessages;
     private EditText textField;
-    private ImageButton attachBtn, emojiBtn, submitBtn;
+    private ImageButton attachBtn, emojiBtn, submitBtn, backArrow_btn;
 
     private FirebaseAuth mAuth;
     private DatabaseReference messagesRef;
@@ -72,6 +74,7 @@ public class ChatActivity extends AppCompatActivity {
         attachBtn = findViewById(R.id.attachBtn);
         emojiBtn = findViewById(R.id.emojiBtn);
         submitBtn = findViewById(R.id.submitBtn);
+        backArrow_btn = findViewById(R.id.backArr_btn);
         listOfMessages = findViewById(R.id.listOfMessages);
 
         // Проверяем, что элементы найдены
@@ -82,6 +85,13 @@ public class ChatActivity extends AppCompatActivity {
 
         // Простой обработчик эмодзи (показывает диалог с эмодзи)
         emojiBtn.setOnClickListener(v -> showSimpleEmojiPicker());
+
+        // Вместо лямбды
+        backArrow_btn.setOnClickListener(view -> {
+            Log.d("ButtonTest", "Clicked!");
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
 
         // Обработчик вложений
         attachBtn.setOnClickListener(v -> {

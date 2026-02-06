@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_chat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".chats.ChatActivity">
+
+    <!-- Верхняя панель с кнопкой назад -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/backArr_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_round_arrow_back"
+            android:backgroundTint="@color/white" />
+
+        <!-- Заголовок по центру экрана -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Чат"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginEnd="48dp"
+            android:paddingStart="12dp" />
+    </LinearLayout>
 
     <!-- Список сообщений -->
     <ListView
@@ -12,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomLayout"
+        android:layout_below="@+id/topBar"
         android:layout_alignParentTop="true"
         android:divider="@android:color/transparent"
         android:dividerHeight="8dp"
